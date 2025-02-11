@@ -16,15 +16,15 @@ struct DeckDetailView: View {
                 Group {
                     if let deck = deckNode.deck {
                         Text("New: ") +
-                        Text("\(deck.new_count)")
+                        Text("\(deck.newCount)")
                             .foregroundStyle(.blue)
                             .bold()
                         Text("Learn: ") +
-                        Text("\(deck.learn_count)")
+                        Text("\(deck.learnCount)")
                             .foregroundStyle(.red)
                             .bold()
                         Text("Review: ") +
-                        Text("\(deck.review_count)")
+                        Text("\(deck.reviewCount)")
                             .foregroundStyle(.green)
                             .bold()
                     } else {
@@ -42,5 +42,5 @@ struct DeckDetailView: View {
 }
 
 #Preview {
-    DeckDetailView(deckNode: DeckStructureNode(name: "Test Deck", deck: Deck(deck_id: 123, name: "Example Deck", new_count: 20, learn_count: 5, review_count: 75, total_in_deck: 2000)))
+    DeckDetailView(deckNode: DeckStructureNode(name: "Test Deck", deck: Deck(deckID: 123, name: "Test", newCount: 20, learnCount: 25, reviewCount: 30, totalInDeck: 500)))
 }

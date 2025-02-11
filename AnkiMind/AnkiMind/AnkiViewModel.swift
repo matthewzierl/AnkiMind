@@ -48,13 +48,52 @@ struct DeckStructureNode: Hashable, Identifiable, Comparable {
     }
 }
 
-struct Deck: Decodable, Hashable, Comparable {
-    var deck_id: Int
+struct Deck: Codable, Hashable, Comparable {
+    
+    enum CodingKeys: String, CodingKey {
+        case deckID = "deck_id"
+        case name = "name"
+        case newCount = "new_count"
+        case learnCount = "learn_count"
+        case reviewCount = "review_count"
+        case totalInDeck = "total_in_deck"
+    }
+    
+    var deckID: Int
     var name: String
-    var new_count: Int
-    var learn_count: Int
-    var review_count: Int
-    var total_in_deck: Int
+    var newCount: Int
+    var learnCount: Int
+    var reviewCount: Int
+    var totalInDeck: Int
+    
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.deckID = try container.decode(Int.self, forKey: .deckID)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.newCount = try container.decode(Int.self, forKey: .newCount)
+        self.learnCount = try container.decode(Int.self, forKey: .learnCount)
+        self.reviewCount = try container.decode(Int.self, forKey: .reviewCount)
+        self.totalInDeck = try container.decode(Int.self, forKey: .totalInDeck)
+    }
+    
+    func encode(to encoder: any Encoder) throws { // i don't think i really need it to be encodable
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.deckID, forKey: .deckID)
+        try container.encode(self.name, forKey: .name)
+        try container.encode(self.newCount, forKey: .newCount)
+        try container.encode(self.learnCount, forKey: .learnCount)
+        try container.encode(self.reviewCount, forKey: .reviewCount)
+        try container.encode(self.totalInDeck, forKey: .totalInDeck)
+    }
+    
+    init (deckID: Int, name: String, newCount: Int, learnCount: Int, reviewCount: Int, totalInDeck: Int) {
+        self.deckID = deckID
+        self.name = name
+        self.newCount = newCount
+        self.learnCount = learnCount
+        self.reviewCount = reviewCount
+        self.totalInDeck = totalInDeck
+    }
     
     static func < (lhs: Deck, rhs: Deck) -> Bool {
         lhs.name < rhs.name

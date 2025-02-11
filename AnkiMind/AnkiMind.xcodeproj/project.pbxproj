@@ -6,13 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		B50EAD172D57B8B90087F859 /* DeckDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EAD162D57B8B90087F859 /* DeckDetailView.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		B50EACBF2D55C02B0087F859 /* AnkiMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnkiMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B50EAD162D57B8B90087F859 /* DeckDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -50,7 +45,6 @@
 		B50EACB62D55C02B0087F859 = {
 			isa = PBXGroup;
 			children = (
-				B50EAD162D57B8B90087F859 /* DeckDetailView.swift */,
 				B50EACC12D55C02B0087F859 /* AnkiMind */,
 				B50EACC02D55C02B0087F859 /* Products */,
 			);
@@ -138,7 +132,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50EAD172D57B8B90087F859 /* DeckDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
