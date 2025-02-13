@@ -42,5 +42,5 @@ struct DeckDetailView: View {
 }
 
 #Preview {
-    DeckDetailView(deckNode: DeckStructureNode(name: "Test Deck", deck: Deck(deckID: 123, name: "Test", newCount: 20, learnCount: 25, reviewCount: 30, totalInDeck: 500)))
+    DeckDetailView(deckNode: DeckStructureNode(name: "Test Deck", deck: Deck(deckID: 123, name: "Test", newCount: 20, learnCount: 25, reviewCount: 30, totalInDeck: 500), isRoot: true))
 }
